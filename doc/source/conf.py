@@ -35,6 +35,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
 ]
+autosectionlabel_prefix_document = True
 
 templates_path = ["_templates"]
 exclude_patterns = []
@@ -43,7 +44,7 @@ exclude_patterns = []
 html_scaled_image_link = False
 
 # 헤딩 앵커 아이콘 설정 #
-html_permalinks_icon = "#"
+# html_permalinks_icon = "#"
 
 # ── MyST parser options ───────────────────────────────────────────────
 myst_enable_extensions = [
@@ -64,7 +65,7 @@ autodoc_inherit_docstrings = True
 add_module_names = False
 autoclass_content = "class"
 autodoc_default_options = {
-    "members": True,
+    "members": False,
     "undoc-members": False,
     "inherited-members": False,
     "show-inheritance": False,
@@ -83,6 +84,7 @@ html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_js_files = ["sidebar-scroll-to-clicked.js"]
 html_theme_options = {}
+html_show_sourcelink = False
 
 # 검색창 아래에 표시할 SDK 버전 컨텍스트
 html_context = {

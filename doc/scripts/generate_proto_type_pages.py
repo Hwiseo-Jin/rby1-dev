@@ -44,9 +44,9 @@ def _proto_dir_from_path(proto_path: str) -> str:
     return name.replace(".proto", "")
 
 
-def _rel_link(from_dir: Path, to_path: Path, anchor: str) -> str:
+def _rel_link(from_dir: Path, to_path: Path) -> str:
     rel = Path(os.path.relpath(to_path, from_dir))
-    return f"{rel.as_posix()}#{anchor}"
+    return rel.as_posix()
 
 
 def rewrite_local_links(
@@ -61,14 +61,14 @@ def rewrite_local_links(
         if not target:
             return label
         target_path = Path(target["path"])
-        link = _rel_link(current_proto_dir, target_path, anchor)
+        link = _rel_link(current_proto_dir, target_path)
         return f"[{label}]({link})"
 
     def _scalar_repl(match: re.Match[str]) -> str:
         label = match.group("text")
-        anchor = normalize_anchor(match.group("anchor"))
+        _ = normalize_anchor(match.group("anchor"))
         target_path = GENERATED_DIR / f"{SCALAR_FILE_SLUG}.md"
-        link = _rel_link(current_proto_dir, target_path, anchor)
+        link = _rel_link(current_proto_dir, target_path)
         return f"[{label}]({link})"
 
     text = LOCAL_ANCHOR_LINK.sub(_repl, text)
@@ -192,11 +192,12 @@ def build_type_page(entry: dict[str, Any]) -> str:
         for child in children:
             child_path = (current_dir / f"{child['slug']}.md").relative_to(current_dir)
             lines.append(
-                f"- [{child['name']}]({child_path.as_posix()}#{child['label']})"
+                f"- [{child['name']}]({child_path.as_posix()})"
             )
         lines.append("")
         child_section = "\n".join(lines)
     parts = [
+        f"({entry['label']})=\n",
         f"# {entry['name']}\n\n",
         f"- Source proto: `{entry['proto']}`\n",
         "\n",
@@ -211,10 +212,7 @@ def build_type_page(entry: dict[str, Any]) -> str:
 
 def build_scalar_page(block: str, anchor_to_target: dict[str, dict[str, str]]) -> str:
     rewritten = rewrite_local_links(block, anchor_to_target, GENERATED_DIR)
-    return (
-        "# Scalar Value Types\n\n"
-        f"{rewritten}"
-    )
+    return rewritten
 
 
 def main() -> None:

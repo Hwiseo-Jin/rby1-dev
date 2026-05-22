@@ -91,6 +91,7 @@ protoc-doc:
 	@sudo python3 scripts/patch_protos_md.py "$(PROTO_OUT_DIR)/$(PROTO_DOC_NAME)"
 	@sudo python3 scripts/generate_proto_type_pages.py
 	@sudo python3 scripts/generate_proto_catalog.py
+	@rm -f "$(PROTO_OUT_DIR)/$(PROTO_DOC_NAME)"
 	
 
 clean-proto:

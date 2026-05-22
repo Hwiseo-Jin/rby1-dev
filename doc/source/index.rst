@@ -28,11 +28,11 @@ This site is organized around the complete lifecycle of using RB-Y1:
 - **Getting started** — Unboxing, power & safety basics, hotspot/WebUI access, and first motion
   (see :doc:`getting-started/index`).
 - **Software & SDKs** — C++/Python SDK concepts, data models, real-time streaming, command semantics,
-  examples, and troubleshooting (see :doc:`software/index`).
+  examples, and troubleshooting (see :doc:`software/architecture`).
 - **Models** — URDF, meshes, and visualization assets for simulators and viewers
-  (see :doc:`models/overview`).
+  (see :doc:`sdk/models/index`).
 - **Examples** — End-to-end samples and best practices for control, logging, and integration
-  (see :doc:`examples/index`).
+  (see :doc:`examples/python_ex`)(see :doc:`examples/c++_ex`).
 
 Quick links
 -----------
@@ -43,7 +43,6 @@ Quick links
 - :doc:`getting-started/sdk-install-and-state`
 - :doc:`sdk/cpp/index`
 - :doc:`sdk/protos/index`
-- :doc:`getting-started/troubleshooting`
 
 System highlights
 -----------------
@@ -106,7 +105,7 @@ Support & licensing
    :caption: Options
 
    options/gripper
-   options/master_arm
+   options/leader_arm
 
 .. toctree::
    :hidden:
@@ -132,8 +131,7 @@ Support & licensing
    :maxdepth: 1
    :caption: Examples
 
-   examples/c++_ex
-   examples/python_ex
+   examples/ex
 
 .. toctree::
    :hidden:
@@ -149,3 +147,14 @@ Support & licensing
 
    rpc_management_tools/rpc_management_tools
 
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Precautions
+
+   precautions/power_and_battery
+   precautions/hardware_handling
+   precautions/control_and_system
+   precautions/operation
+   precautions/general

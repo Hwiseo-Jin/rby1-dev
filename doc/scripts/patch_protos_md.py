@@ -53,7 +53,7 @@ SCALAR_TYPES = [
 if "(scalar-value-types)=" not in s2:
     s2 = s2.replace(
         "## Scalar Value Types",
-        "(scalar-value-types)=\n## Scalar Value Types",
+        "(scalar-value-types)=\n# Scalar Value Types",
         1
     )
 
