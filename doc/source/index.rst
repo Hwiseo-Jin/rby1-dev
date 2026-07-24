@@ -79,6 +79,7 @@ Support & licensing
    :caption: Getting Started
 
    getting-started/hello_rby1
+   getting-started/tutorial_videos
    getting-started/index
 
 .. toctree::
@@ -138,15 +139,26 @@ Support & licensing
    :maxdepth: 1
    :caption: simulaotrs
 
-   simulators/simulators
+   simulators/mujoco
+   simulators/isaac_sim
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: ROS2
+
+   ros2/index
 
 .. toctree::
    :hidden:
    :maxdepth: 1
    :caption: RPC Management Tools
 
-   rpc_management_tools/rpc_management_tools
-
+   rpc_management_tools/rpc_updater
+   rpc_management_tools/log_backup
+   rpc_management_tools/can_checker
+   rpc_management_tools/ft_sensor_initialize
+   rpc_management_tools/bootloader
 
 .. toctree::
    :hidden:

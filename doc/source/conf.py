@@ -34,6 +34,7 @@ extensions = [
     "breathe",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinxcontrib.mermaid",
 ]
 autosectionlabel_prefix_document = True
 

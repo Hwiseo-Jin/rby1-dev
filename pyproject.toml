@@ -13,5 +13,6 @@ dependencies = [
     "pydot>=4.0.1",
     "sphinx<=8.3.0",
     "sphinx-copybutton>=0.5.2",
+    "sphinxcontrib-mermaid>=1.0.0",
     "sphinx-design>=0.6.1",
 ]

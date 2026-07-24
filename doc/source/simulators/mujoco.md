@@ -1,4 +1,6 @@
-# Explore the RBY1 Simulator!
+# Mujoco
+
+## Explore the RBY1 Simulator!
 
 Now available for both ARM and x86 platforms in a MuJoCo-based Docker container.
 
